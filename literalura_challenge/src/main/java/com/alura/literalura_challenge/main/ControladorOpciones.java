@@ -17,6 +17,7 @@ public class ControladorOpciones {
 
     private LibroRepository libroRepository;
     private AutorRepository autorRepository;
+
     public ControladorOpciones(LibroRepository libroRepository,
                                AutorRepository autorRepository)
     {
@@ -25,7 +26,6 @@ public class ControladorOpciones {
     }
 
     private DatosLibro pedirDatosLibro() {
-
         System.out.println("Ingresa el nombre del titulo que deseas buscar");
         String tituloDelLibro = new Scanner(System.in).nextLine();
         try{
@@ -40,7 +40,6 @@ public class ControladorOpciones {
 
     private void guardarLibroEnDB (DatosLibro datos) {
         Optional<Autor> autorGuardado = autorRepository.findByNombre(datos.autor().get(0).nombre());
-
         if (autorGuardado.isPresent()) {
             Autor autor = autorGuardado.get();
 
@@ -97,7 +96,6 @@ public class ControladorOpciones {
 
         String idioma = new Locale(abbr).getDisplayLanguage();
         if(!libros.isEmpty()){
-
             System.out.printf("***** Listado de libros en %s *****\n", abbr);
             libros.forEach(this::mostrarInformacionLibro);
             System.out.println("\n#################################");
@@ -106,7 +104,6 @@ public class ControladorOpciones {
                     libros.size());
             System.out.println("#################################\n");
         }
-
         else {
             System.out.println("\n#################################");
             System.out.println("No se encontraron libros en " + idioma);
@@ -115,9 +112,6 @@ public class ControladorOpciones {
 
     }
 
-    public void footerBusquedaPorIdioma(List<Libro> librosEncontrados) {
-
-    }
 
     public void listadoDeAutoresBuscados() {
         var autores = autorRepository.findAll();
