@@ -1,4 +1,4 @@
-<h1 align="center"> Literatula Challenge - Alura ONE </h1>
+<h1 align="center"> Literalura Challenge - Alura ONE </h1>
 
 ## :white_check_mark: Tecnologías utilizadas
 
