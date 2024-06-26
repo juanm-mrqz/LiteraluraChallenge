@@ -47,11 +47,12 @@ public class MenuPrincipal {
                     break;
                 case 6:
                     controlador.listarTop5Libros();
+                    break;
                 case 0:
                     System.out.println("Cerrando la app...");
                     break;
                 default:
-                    System.out.println("Opcion invalida");
+                    System.out.println("Opcion invalida. Ingrese un numero valido dentro del menu");
             }
         }
     }
